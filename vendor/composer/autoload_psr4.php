@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Tjslash\\BackpackMenuManager\\' => array($baseDir . '/src'),
+    'Tjslash\\CtoMenuManager\\' => array($baseDir . '/src'),
 );

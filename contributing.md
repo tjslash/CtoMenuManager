@@ -1,9 +1,9 @@
 # Contributing
 
 Contributions are welcome and will be fully credited:
-- code contributions are accepted via Pull Requests to [this Github repo](https://github.com/tjslash/backpack-menu-manager);
+- code contributions are accepted via Pull Requests to [this Github repo](https://github.com/tjslash/cto-menu-manager);
 - financial contributions are usually in the form of [donations](), [projects]() or [jobs](); 
-- documentation contributions are accepted via Pull Requests to [this Github repo](https://github.com/tjslash/backpack-menu-manager);
+- documentation contributions are accepted via Pull Requests to [this Github repo](https://github.com/tjslash/cto-menu-manager);
 - other contributions are most likely welcome in the way you see fit;
 
 # Things you could do

@@ -9,7 +9,7 @@
 | handled by the Tjslash\BackpackMenuManager package.
 |
 */
-use \Tjslash\BackpackMenuManager\Http\Controllers\Admin\MenuCrudController;
+use \Tjslash\CtoMenuManager\Http\Controllers\Admin\MenuCrudController;
 
 Route::group([
     'prefix' => config('backpack.base.route_prefix', 'admin'),

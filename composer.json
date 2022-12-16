@@ -1,6 +1,6 @@
 {
-    "name": "tjslash/backpack-menu-manager",
-    "description": "Backpack Menu CRUD",
+    "name": "tjslash/cto-menu-manager",
+    "description": "Cto Menu CRUD",
     "license": "MIT",
     "authors": [
         {
@@ -8,15 +8,15 @@
             "email": "vakylenkox@gmail.com"
         }
     ],
-    "homepage": "https://github.com/tjslash/backpack-menu-manager",
+    "homepage": "https://github.com/tjslash/cto-menu-manager",
     "keywords": [
-        "Laravel", "Backpack", "Backpack for Laravel", "Backpack Addon", "BackpackMenuManager"
+        "Laravel"
     ],
     "require": {
         "illuminate/support": "~8|~9",
         "cviebrock/eloquent-sluggable": "^9.0",
         "backpack/permissionmanager": "^6.0",
-        "tjslash/backpack-page-manager": "^1.0",
+        "tjslash/cto-page-manager": "^1.0",
         "backpack/crud": "^5.4"
     },
     "require-dev": {
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Tjslash\\BackpackMenuManager\\": "src/"
+            "Tjslash\\CtoMenuManager\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tjslash\\BackpackMenuManager\\Tests\\": "tests"
+            "Tjslash\\CtoMenuManager\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -39,7 +39,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tjslash\\BackpackMenuManager\\AddonServiceProvider"
+                "Tjslash\\CtoMenuManager\\AddonServiceProvider"
             ]
         }
     }

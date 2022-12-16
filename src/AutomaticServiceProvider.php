@@ -1,6 +1,6 @@
 <?php
 
-namespace Tjslash\BackpackMenuManager;
+namespace Tjslash\CtoMenuManager;
 
 use Backpack\CRUD\ViewNamespaces;
 

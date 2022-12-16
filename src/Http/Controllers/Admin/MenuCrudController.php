@@ -1,12 +1,12 @@
 <?php
 
-namespace Tjslash\BackpackMenuManager\Http\Controllers\Admin;
+namespace Tjslash\CtoMenuManager\Http\Controllers\Admin;
 
-use Tjslash\BackpackMenuManager\Http\Requests\MenuRequest;
+use Tjslash\CtoMenuManager\Http\Requests\MenuRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use Tjslash\BackpackMenuManager\Models\Menu;
-use Tjslash\BackpackPageManager\Models\Page;
+use Tjslash\CtoMenuManager\Models\Menu;
+use Tjslash\CtoPageManager\Models\Page;
 
 /**
  * Class MenuCrudController
@@ -31,8 +31,8 @@ class MenuCrudController extends CrudController
         CRUD::setModel(Menu::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/menu');
         CRUD::setEntityNameStrings(
-            trans('tjslash::backpack-menu-manager.menu_item'), 
-            trans('tjslash::backpack-menu-manager.menu_items')
+            trans('tjslash::cto-menu-manager.menu_item'), 
+            trans('tjslash::cto-menu-manager.menu_items')
         );
         CRUD::denyAccess('show');
         CRUD::disableDetailsRow();
@@ -56,7 +56,7 @@ class MenuCrudController extends CrudController
 
         CRUD::addColumn([
             'name' => 'title',
-            'label' => trans('tjslash::backpack-menu-manager.title'),
+            'label' => trans('tjslash::cto-menu-manager.title'),
             'type' => 'closure',
             'function' => function(Menu $menu) {
                 if (!backpack_pro() || $menu->url === null) return $menu->title;
@@ -69,7 +69,7 @@ class MenuCrudController extends CrudController
 
         CRUD::addColumn([
             'name' => 'parents',
-            'label' => trans('tjslash::backpack-menu-manager.parents'),
+            'label' => trans('tjslash::cto-menu-manager.parents'),
             'type' => 'relationship',
             'attribute' => 'title',
         ]);
@@ -77,19 +77,19 @@ class MenuCrudController extends CrudController
         CRUD::addColumn([
            'name' => 'childs',
            'type' => 'relationship_count', 
-           'label' => trans('tjslash::backpack-menu-manager.submenu'),
+           'label' => trans('tjslash::cto-menu-manager.submenu'),
            'suffix' => ' шт.'
         ]);
 
         CRUD::addColumn([
             'name' => 'priority',
-            'label' => trans('tjslash::backpack-menu-manager.priority')
+            'label' => trans('tjslash::cto-menu-manager.priority')
         ]);
 
         CRUD::addColumn([
             'type' => 'check',
             'name' => 'active',
-            'label' => trans('tjslash::backpack-menu-manager.active')
+            'label' => trans('tjslash::cto-menu-manager.active')
         ]);
 
         if (backpack_pro()) {
@@ -108,7 +108,7 @@ class MenuCrudController extends CrudController
         CRUD::addFilter([
                 'type' => 'text',
                 'name' => 'title',
-                'label'=> trans('tjslash::backpack-menu-manager.title')
+                'label'=> trans('tjslash::cto-menu-manager.title')
             ], 
             false, 
             fn($value) => CRUD::addClause('where', 'title', 'LIKE', "%$value%")
@@ -117,7 +117,7 @@ class MenuCrudController extends CrudController
         CRUD::addFilter([
                 'name' => 'parents',
                 'type' => 'select2',
-                'label' => trans('tjslash::backpack-menu-manager.parents')
+                'label' => trans('tjslash::cto-menu-manager.parents')
             ], 
             fn() => Menu::whereHas('childs')->get()->pluck('title', 'id')->toArray(),
             fn($value) => $this->crud
@@ -128,7 +128,7 @@ class MenuCrudController extends CrudController
         CRUD::addFilter([
                 'type' => 'text',
                 'name' => 'priority',
-                'label'=> trans('tjslash::backpack-menu-manager.priority')
+                'label'=> trans('tjslash::cto-menu-manager.priority')
             ], 
             false, 
             fn($value) => CRUD::addClause('where', 'priority', $value)
@@ -137,10 +137,10 @@ class MenuCrudController extends CrudController
         CRUD::addFilter([
                 'name' => '_blank',
                 'type' => 'dropdown',
-                'label' => trans('tjslash::backpack-menu-manager.new_window')
+                'label' => trans('tjslash::cto-menu-manager.new_window')
             ], [
-                1 => trans('tjslash::backpack-menu-manager.yes'),
-                0 => trans('tjslash::backpack-menu-manager.no'),
+                1 => trans('tjslash::cto-menu-manager.yes'),
+                0 => trans('tjslash::cto-menu-manager.no'),
             ],
             fn($value) => CRUD::addClause('where', '_blank', $value)
         );
@@ -148,10 +148,10 @@ class MenuCrudController extends CrudController
         CRUD::addFilter([
                 'name' => 'active',
                 'type' => 'dropdown',
-                'label' => trans('tjslash::backpack-menu-manager.active')
+                'label' => trans('tjslash::cto-menu-manager.active')
             ], [
-                1 => trans('tjslash::backpack-menu-manager.yes'),
-                0 => trans('tjslash::backpack-menu-manager.no'),
+                1 => trans('tjslash::cto-menu-manager.yes'),
+                0 => trans('tjslash::cto-menu-manager.no'),
             ],
             fn($value) => CRUD::addClause('where', 'active', $value)
         );
@@ -169,11 +169,11 @@ class MenuCrudController extends CrudController
 
         CRUD::addField([
             'name' => 'title',
-            'label' => trans('tjslash::backpack-menu-manager.title'),
+            'label' => trans('tjslash::cto-menu-manager.title'),
         ]);
 
         CRUD::addField([
-             'label' => trans('tjslash::backpack-menu-manager.parents'),
+             'label' => trans('tjslash::cto-menu-manager.parents'),
              'type' => 'select2_multiple',
              'name' => 'parents',
              'entity' => 'parents',
@@ -186,7 +186,7 @@ class MenuCrudController extends CrudController
         ]);
 
         CRUD::addField([
-            'label' => trans('tjslash::backpack-menu-manager.url'),
+            'label' => trans('tjslash::cto-menu-manager.url'),
             'name' => 'url',
             'wrapper' => [
                 'class' => 'form-group col-md-6'
@@ -194,7 +194,7 @@ class MenuCrudController extends CrudController
         ]);
 
         CRUD::addField([
-            'label' => trans('tjslash::backpack-menu-manager.page'),
+            'label' => trans('tjslash::cto-menu-manager.page'),
             'type' => 'select2',
             'name' => 'page_id',
             'entity' => 'page',
@@ -208,20 +208,20 @@ class MenuCrudController extends CrudController
 
         CRUD::addField([
             'name' => 'priority',
-            'label' => trans('tjslash::backpack-menu-manager.priority'),
+            'label' => trans('tjslash::cto-menu-manager.priority'),
             'type' => 'number',
             'value' => 0
         ]);
 
         CRUD::addField([
             'name' => '_blank',
-            'label' => trans('tjslash::backpack-menu-manager.new_window'),
+            'label' => trans('tjslash::cto-menu-manager.new_window'),
             'type' => 'checkbox',
         ]);
 
         CRUD::addField([
             'name' => 'active',
-            'label' => trans('tjslash::backpack-menu-manager.active'),
+            'label' => trans('tjslash::cto-menu-manager.active'),
             'type' => 'checkbox',
         ]);
     }

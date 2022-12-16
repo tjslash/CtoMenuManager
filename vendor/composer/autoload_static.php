@@ -9,12 +9,12 @@ class ComposerStaticInitcd5496050cddeb9c5eec2509c1554b5b
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
-            'Tjslash\\BackpackMenuManager\\' => 28,
+            'Tjslash\\CtoMenuManager\\' => 28,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Tjslash\\BackpackMenuManager\\' => 
+        'Tjslash\\CtoMenuManager\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

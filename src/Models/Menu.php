@@ -1,6 +1,6 @@
 <?php
 
-namespace Tjslash\BackpackMenuManager\Models;
+namespace Tjslash\CtoMenuManager\Models;
 
 use Illuminate\Support\Str;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\{
     SoftDeletes
 };
 use Cviebrock\EloquentSluggable\Sluggable;
-use Tjslash\BackpackPageManager\Models\Page;
+use Tjslash\CtoPageManager\Models\Page;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\{
     BelongsTo,

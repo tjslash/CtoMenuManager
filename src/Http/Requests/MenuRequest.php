@@ -1,6 +1,6 @@
 <?php
 
-namespace Tjslash\BackpackMenuManager\Http\Requests;
+namespace Tjslash\CtoMenuManager\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

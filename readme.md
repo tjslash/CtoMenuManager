@@ -1,4 +1,4 @@
-# Backpack CRUD Menu Manager
+# Cto CRUD Menu Manager
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -17,13 +17,13 @@ This package Menu CRUD Manager functionality for projects that use the [Backpack
 Composer:
 
 ``` bash
-composer require tjslash/backpack-menu-manager
+composer require tjslash/cto-menu-manager
 ```
 
 Put link for administration sidebar:
 
 ``` bash
-php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{ backpack_url('menu') }}'><i class='nav-icon la la-list'></i> {{ __('tjslash::backpack-menu-manager.menu_items') }}</a></li>"
+php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{ backpack_url('menu') }}'><i class='nav-icon la la-list'></i> {{ __('tjslash::cto-menu-manager.menu_items') }}</a></li>"
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ Open Menu CRUD Manager at the administration panel:
 
 ## Change log
 
-Changes are documented here on Github. Please see the [Releases tab](https://github.com/tjslash/backpack-menu-manager/releases).
+Changes are documented here on Github. Please see the [Releases tab](https://github.com/tjslash/cto-menu-manager/releases).
 
 ## Testing
 
@@ -64,10 +64,10 @@ This project was released under MIT, so you can install it on top of any Backpac
 However, please note that you do need Backpack installed, so you need to also abide by its [YUMMY License](https://github.com/Laravel-Backpack/CRUD/blob/master/LICENSE.md). That means in production you'll need a Backpack license code. You can get a free one for non-commercial use (or a paid one for commercial use) on [backpackforlaravel.com](https://backpackforlaravel.com).
 
 
-[ico-version]: https://img.shields.io/packagist/v/tjslash/backpack-menu-manager.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/tjslash/backpack-menu-manager.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/tjslash/cto-menu-manager.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/tjslash/cto-menu-manager.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/tjslash/backpack-menu-manager
-[link-downloads]: https://packagist.org/packages/tjslash/backpack-menu-manager
+[link-packagist]: https://packagist.org/packages/tjslash/cto-menu-manager
+[link-downloads]: https://packagist.org/packages/tjslash/cto-menu-manager
 [link-author]: https://github.com/tj
 [link-contributors]: ../../contributors
